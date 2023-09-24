@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <div>LoginContainer</div>
+  <ruoter-view></ruoter-view>
 </template>
 
 <style></style>
