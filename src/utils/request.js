@@ -3,12 +3,12 @@ import { useUserStore } from '@/stores'
 import { ElMessage } from 'element-plus'
 import router from '@/router'
 const baseURL = 'http://big-event-vue-api-t.itheima.net'
-const instance = axios.create({
+const request = axios.create({
   baseURL,
-  timeout: 100000
+  timeout: 10000
 })
 // 添加请求拦截器
-instance.interceptors.request.use(
+request.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
     const userStore = useUserStore()
@@ -24,7 +24,7 @@ instance.interceptors.request.use(
 )
 
 // 添加响应拦截器
-instance.interceptors.response.use(
+request.interceptors.response.use(
   function (response) {
     // 对响应数据做点什么
     if (response.data.code === 0) {
@@ -39,6 +39,7 @@ instance.interceptors.response.use(
       message: error.response.data.message || '服务异常',
       type: 'error'
     })
+    console.log(error)
     if (error.response?.status === 401) {
       router.push('/login')
     }
@@ -46,5 +47,5 @@ instance.interceptors.response.use(
   }
 )
 
-export default instance
+export default request
 export { baseURL }

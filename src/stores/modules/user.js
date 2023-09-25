@@ -5,7 +5,7 @@ export const useUserStore = defineStore(
   'big-user',
   () => {
     const token = ref('') // 定义token
-    const setToken = (t) => (token.value = t) // 设置token
+    const setToken = (newToken) => (token.value = newToken) // 设置token
     return { token, setToken }
   },
   {
