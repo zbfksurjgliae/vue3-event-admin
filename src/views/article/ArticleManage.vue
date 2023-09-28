@@ -2,7 +2,7 @@
 import { ref } from 'vue'
 import { Delete, Edit } from '@element-plus/icons-vue'
 import ChannelSelect from '@/views/article/components/ChannelSelect.vue'
-import { artGetListService } from '@/api/article'
+import { artGetListService, artDeleteService } from '@/api/article'
 import { formatTime } from '@/utils/format'
 import ArticleEdit from '@/views/article/components/ArticleEdit.vue'
 // 定义文章参数
@@ -16,6 +16,7 @@ const params = ref({
 const loading = ref(false)
 // 定义文章列表数据、获取文章列表数据
 const articleList = ref([])
+// 定义文章总页数
 const total = ref(0)
 const getArticleList = async () => {
   loading.value = true
@@ -45,8 +46,15 @@ const onEditArticle = (row) => {
 const onAddArticle = () => {
   articleEditRef.value.open({})
 }
-const onDelArticle = (row) => {
-  console.log(row)
+const onDelArticle = async (row) => {
+  await ElMessageBox.confirm('你确定删除该文章信息吗？', '温馨提示', {
+    type: 'warning',
+    confirmButtonText: '确定',
+    cancelButtonText: '取消'
+  })
+  await artDeleteService(row.id)
+  ElMessage.success('删除成功')
+  getArticleList()
 }
 // 分页按钮函数
 const handleSizeChange = (size) => {
@@ -56,6 +64,15 @@ const handleSizeChange = (size) => {
 }
 const handleCurrentChange = (page) => {
   params.value.pagenum = page
+  getArticleList()
+}
+// 添加或编辑成功后的操作
+const onSuccess = (type) => {
+  if (type === 'add') {
+    // 如果是添加，需要跳转渲染到最后一页
+    const lastPage = Math.ceil((total.value + 1) / params.value.pagesize)
+    params.value.pagenum = lastPage
+  }
   getArticleList()
 }
 </script>
@@ -131,5 +148,5 @@ const handleCurrentChange = (page) => {
       style="margin-top: 20px; justify-content: flex-end"
     />
   </page-container>
-  <article-edit ref="articleEditRef"></article-edit>
+  <article-edit ref="articleEditRef" @success="onSuccess"></article-edit>
 </template>
