@@ -5,7 +5,7 @@ import { userRegisterService, userLoginService } from '@/api/user.js'
 import { useRouter } from 'vue-router'
 import { useUserStore } from '@/stores'
 // 登录、注册切换的flag
-const isRegister = ref(true)
+const isRegister = ref(false)
 // 表单数据
 const formModel = ref({
   username: '',
