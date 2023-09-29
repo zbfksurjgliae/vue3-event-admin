@@ -34,10 +34,10 @@ Vue3 大事件管理系统
 
 在线演示地址：https://fe-bigevent-web.itheima.net/login（上线之后还得继续更改）
 
-![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\image-20230706205257486.png)
+![登录页](src/assets/image-20230706205257486.png)
 
-![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105222.png)
+![事件分类页](src/assets/Quicker_20230929_105222.png)
 
-![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105350.png)
+![事件管理页](src/assets/Quicker_20230929_105350.png)
 
-![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105433.png)
+![事件编辑](src/assets/Quicker_20230929_105433.png)
