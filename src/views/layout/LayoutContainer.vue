@@ -79,7 +79,7 @@ const onCommand = async (command) => {
     <el-container>
       <el-header>
         <div>
-          黑马程序员：<strong>{{
+          酱紫程序员：<strong>{{
             userStore.user.nickname || userStore.user.username
           }}</strong>
         </div>
@@ -109,7 +109,7 @@ const onCommand = async (command) => {
       <el-main>
         <router-view></router-view>
       </el-main>
-      <el-footer>大事件 ©2023 Created by 黑马程序员</el-footer>
+      <el-footer>大事件 ©2023 Created by 酱紫程序员</el-footer>
     </el-container>
   </el-container>
 </template>

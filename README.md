@@ -1,35 +1,43 @@
-#  Vue3-big-event-admin
+#  Big-event项目
 
-This template should help get you started developing with Vue 3 in Vite.
+Vue3 大事件管理系统
 
-## Recommended IDE Setup
+接口文档：https://apifox.com/apidoc/shared-26c67aee-0233-4d23-aab7-08448fdf95ff/api-93850835
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+接口根路径： http://big-event-vue-api-t.itheima.net
 
-## Customize configuration
+## 1.	项目简介
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+本项目是在vue3学习阶段练习的一个前端事件管理后台系统
 
-## Project Setup
+### 1.1	主要技术栈有：
 
-```sh
-pnpm install
-```
+- HTML、ES6、CSS、Axios
+- 构建框架是：Vue3
+- 状态管理是：pinia
+- 构建工具：vite
+- 组件库：element-plus
+- 路由管理：vue-router
+- 包管理器：pnpm
 
-### Compile and Hot-Reload for Development
+## 2.	项目功能
 
-```sh
-pnpm dev
-```
+1. 首页登录：用户注册、登录功能。
+2. 事件分类：对文章分类的管理（编辑、删除、添加）。
+3. 事件管理：对事件详情的编辑，添加，删除，发布，草稿。
+4. 个人中心：修改个人账号信息
+5. 自动获取网上事件：（还在更新中）
 
-### Compile and Minify for Production
+## 3.	项目演示
 
-```sh
-pnpm build
-```
+演示账号\密码：1shuaixu\123456
 
-### Lint with [ESLint](https://eslint.org/)
+在线演示地址：https://fe-bigevent-web.itheima.net/login（上线之后还得继续更改）
 
-```sh
-pnpm lint
-```
+![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\image-20230706205257486.png)
+
+![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105222.png)
+
+![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105350.png)
+
+![](D:\Learning-vue\Code\Vue3-big-event-admin\src\assets\Quicker_20230929_105433.png)
