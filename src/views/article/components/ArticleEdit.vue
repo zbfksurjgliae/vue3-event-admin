@@ -90,16 +90,15 @@ const onPublish = async (state) => {
     // 进行编辑操作
     await artEditService(fd)
     ElMessage.success('编辑成功')
-    visibleDrawer.value = false
     emit('success', 'edit')
   } else {
     // 进行添加请求
     await artPublishService(fd)
     ElMessage.success('添加成功')
-    visibleDrawer.value = false
     // 给父组件船体一个变量，识别编辑和添加
     emit('success', 'add')
   }
+  visibleDrawer.value = false
 }
 </script>
 <template>

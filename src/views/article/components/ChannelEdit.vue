@@ -39,13 +39,19 @@ const formRef = ref()
 const emit = defineEmits(['success'])
 const onSubmit = async () => {
   await formRef.value.validate()
-  formModel.value.id
-    ? await artEditChannelService(formModel.value)
-    : await artAddChannelService(formModel.value)
-  ElMessage({
-    type: 'success',
-    message: formModel.value.id ? '编辑成功' : '添加成功'
-  })
+  if (formModel.value.id) {
+    // 编辑分类
+    await artEditChannelService(formModel.value)
+    ElMessage.success('编辑成功')
+  } else {
+    // 添加分类
+    await artAddChannelService(formModel.value)
+    ElMessage.success('添加成功')
+  }
+  // ElMessage({
+  //   type: 'success',
+  //   message: formModel.value.id ? '编辑成功' : '添加成功'
+  // })
   dialogVisible.value = false
   emit('success')
 }
